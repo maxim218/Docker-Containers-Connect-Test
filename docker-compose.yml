@@ -1,0 +1,16 @@
+version: "3"
+services:
+  client_query_maker:
+    build:
+      context: ./client-query-maker
+      dockerfile: Dockerfile
+    image: client_query_maker:tag
+    ports:
+      - "5001:5000"
+  count_worker_app:
+    build:
+      context: ./count-worker-app
+      dockerfile: Dockerfile
+    image: count_worker_app:tag
+    ports:
+      - "5002:5000"
